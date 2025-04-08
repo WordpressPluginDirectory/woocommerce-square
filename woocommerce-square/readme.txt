@@ -2,9 +2,9 @@
 Contributors: woocommerce, automattic
 Tags: credit card, square, woocommerce, inventory sync
 Requires at least: 6.5
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 4.8.5
+Stable tag: 4.9.0
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -71,6 +71,35 @@ If you get stuck, you can ask for help in the [Plugin Forum](https://wordpress.o
 2. The payment gateway settings.
 
 == Changelog ==
+
+= 4.9.0 - 2025-04-07 =
+* Add - Support for syncing multiple Product Variations.
+* Add - Support for WooCommerce's new Email Improvements feature.
+* Fix - Digital Wallets and Cash App payment issues in Woo 9.8.
+* Fix - Deprecated PHP error for Gift Cards.
+* Fix - jQuery error on Cart & Checkout pages when a Subscription product is added to the cart, as Digital Wallets cannot be used for Subscription products.
+* Fix - Remove duplicate onboarding notice.
+* Dev - Bump WooCommerce "tested up to" version 9.8.
+* Dev - Bump WooCommerce minimum supported version to 9.6.
+* Dev - Bump WordPress minimum supported version to 6.6.
+* Dev - Bump WordPress "tested up to" version 6.8.
+* Dev - Updates to E2E tests setup.
+* Dev - Update all third-party actions our workflows rely on to use versions based on specific commit hashes.
+
+= 4.8.7 - 2025-03-06 =
+* Add - Support for syncing the "Mark as Sold Out" field value during inventory sync.
+* Fix - Ensure payment methods display the correct buttons and statuses in the new WooCommerce Payments settings.
+* Fix - Ensure that Cash App Pay works as expected on mobile devices.
+* Fix - Ensure that no blank order is created via the "Add Payment Method" when HPOS is enabled.
+* Dev - Disabled warning checks from WordPress Plugin Check Action.
+
+= 4.8.6 - 2025-02-10 =
+* Fix - Resolved "translation loading was triggered too early" issue in WordPress 6.7.
+* Fix - Refresh brand assets.
+* Dev - Bump WooCommerce "tested up to" version 9.7.
+* Dev - Bump WooCommerce minimum supported version to 9.5.
+* Dev - Bump WordPress minimum supported version to 6.6.
+* Dev - Add the WordPress Plugin Check GitHub Action.
 
 = 4.8.5 - 2025-01-20 =
 * Fix - Unblock the Checkout page UI, and show a generic error when buyer verification fails.
