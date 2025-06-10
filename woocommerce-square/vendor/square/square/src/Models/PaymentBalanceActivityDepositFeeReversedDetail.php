@@ -6,43 +6,43 @@ namespace Square\Models;
 
 use stdClass;
 
-class RenewTokenRequest implements \JsonSerializable
+class PaymentBalanceActivityDepositFeeReversedDetail implements \JsonSerializable
 {
     /**
      * @var array
      */
-    private $accessToken = [];
+    private $payoutId = [];
 
     /**
-     * Returns Access Token.
-     * The token you want to renew.
+     * Returns Payout Id.
+     * The ID of the payout that triggered this deposit fee activity.
      */
-    public function getAccessToken(): ?string
+    public function getPayoutId(): ?string
     {
-        if (count($this->accessToken) == 0) {
+        if (count($this->payoutId) == 0) {
             return null;
         }
-        return $this->accessToken['value'];
+        return $this->payoutId['value'];
     }
 
     /**
-     * Sets Access Token.
-     * The token you want to renew.
+     * Sets Payout Id.
+     * The ID of the payout that triggered this deposit fee activity.
      *
-     * @maps access_token
+     * @maps payout_id
      */
-    public function setAccessToken(?string $accessToken): void
+    public function setPayoutId(?string $payoutId): void
     {
-        $this->accessToken['value'] = $accessToken;
+        $this->payoutId['value'] = $payoutId;
     }
 
     /**
-     * Unsets Access Token.
-     * The token you want to renew.
+     * Unsets Payout Id.
+     * The ID of the payout that triggered this deposit fee activity.
      */
-    public function unsetAccessToken(): void
+    public function unsetPayoutId(): void
     {
-        $this->accessToken = [];
+        $this->payoutId = [];
     }
 
     /**
@@ -57,8 +57,8 @@ class RenewTokenRequest implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        if (!empty($this->accessToken)) {
-            $json['access_token'] = $this->accessToken['value'];
+        if (!empty($this->payoutId)) {
+            $json['payout_id'] = $this->payoutId['value'];
         }
         $json = array_filter($json, function ($val) {
             return $val !== null;
